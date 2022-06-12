@@ -12,6 +12,7 @@ defmodule OpenLibraryappApi.Application do
     children = [
       # Starts a worker by calling: OpenLibraryappApi.Worker.start_link(arg)
       # {OpenLibraryappApi.Worker, arg}
+      OpenLibraryappApi.Repo,
     ]
 
     # Logger.info("Starting application...")
