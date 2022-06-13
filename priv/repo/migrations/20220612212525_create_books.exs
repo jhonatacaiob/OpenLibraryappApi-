@@ -1,8 +1,8 @@
-defmodule OpenLibraryappApi.Repo.Migrations.CreateBook do
+defmodule OpenLibraryappApi.Repo.Migrations.CreateBooks do
   use Ecto.Migration
 
   def change do
-    create table(:book, primary_key: false) do
+    create table(:books, primary_key: false) do
 
       add :uuid, :uuid, primary_key: true
       add :title, :varchar
@@ -12,7 +12,7 @@ defmodule OpenLibraryappApi.Repo.Migrations.CreateBook do
       add :publish_date, :date
 
       add :author_id, references(
-        "author",
+        "authors",
         column: :uuid,
         type: :uuid,
         on_update: :nothing,
