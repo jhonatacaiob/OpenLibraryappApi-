@@ -5,8 +5,8 @@ defmodule OpenLibraryappApi.Repo.Migrations.CreateBorrowed do
     create table(:borrowed, primary_key: false) do
 
       add :uuid, :uuid, primary_key: true
-      add :additional_note, :text
-      add :devolution_date, :utc_datetime
+      add :additional_note, :text, null: true
+      add :devolution_date, :utc_datetime, null: false
 
       add :book_id, references(
         "books",

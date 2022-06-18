@@ -5,11 +5,11 @@ defmodule OpenLibraryappApi.Repo.Migrations.CreateBooks do
     create table(:books, primary_key: false) do
 
       add :uuid, :uuid, primary_key: true
-      add :title, :varchar
-      add :isbn, :varchar
-      add :cover, :varchar
-      add :quantity, :integer
-      add :publish_date, :date
+      add :title, :varchar, null: false
+      add :isbn, :varchar, null: false
+      add :cover, :varchar, null: false
+      add :quantity, :integer, null: false
+      add :publish_date, :date, null: false
 
       add :author_id, references(
         "authors",
